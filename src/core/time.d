@@ -288,7 +288,7 @@ public:
     {
         static if(is(_Unqual!D == Duration))
             return Duration(mixin("_hnsecs " ~ op ~ " rhs._hnsecs"));
-        else if(is(_Unqual!D == TickDuration))
+        else static if(is(_Unqual!D == TickDuration))
             return Duration(mixin("_hnsecs " ~ op ~ " rhs.hnsecs"));
     }
 
@@ -419,7 +419,7 @@ public:
     {
         static if(is(_Unqual!D == Duration))
             mixin("_hnsecs " ~ op ~ "= rhs._hnsecs;");
-        else if(is(_Unqual!D == TickDuration))
+        else static if(is(_Unqual!D == TickDuration))
             mixin("_hnsecs " ~ op ~ "= rhs.hnsecs;");
 
         return this;
