@@ -1,6 +1,6 @@
 /**
  * Forms the symbols available to all D programs. Includes Object, which is
- * the root of the class object hierarchy.  This module is implicitly
+ * the root of the class _object hierarchy.  This module is implicitly
  * imported.
  * Macros:
  *      WIKI = Object
